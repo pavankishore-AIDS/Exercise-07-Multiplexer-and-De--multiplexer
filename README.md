@@ -47,15 +47,40 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-/* write all the steps invloved */
+/* 1.Start the module using module projname().
+
+2.Declare the inputs and outputs along with the select lines according to the multiplexer and demultiplexer.
+
+3.Use wire to assign intermediate outputs.
+
+4.Use and,or and not gates to get the desired output.
+
+5.End the module.
+
+6.Generate RTL realization and timing diagrams.*/
 
 
 
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: M..pavan kishore
+RegisterNumber:  212221230076
+program;
+
+module mux4(s1,s2,io,it,ir,iu,y);
+input s1,s2,io,it,ir,iu;
+output y;
+wire a,b,c,d,e,f;
+assign e=~s1;
+assign f=~s2;
+assign a=io&e&f;
+assign b=it&e&s2;
+assign c=ir&s1&f;
+assign d=iu&s1&s2;
+assign y=a|b|c|d;
+endmodule
+
 */
 
 
@@ -64,22 +89,39 @@ RegisterNumber:
 
 
 ### RTL LOGIC  
+![p1](https://user-images.githubusercontent.com/94154941/171225763-674ce140-e2db-46c3-98f1-d3f32c5eb603.png)
 
 
+![p2](https://user-images.githubusercontent.com/94154941/171225773-a91ccd9f-ace3-4635-a1f2-9a5b31deb5a6.png)
 
 
+![p3](https://user-images.githubusercontent.com/94154941/171225782-7e55092e-a0f4-4693-989c-fd13e2fc7de5.png)
 
 
+![p4](https://user-images.githubusercontent.com/94154941/171225788-62fd9c74-9179-47a0-a55b-58a10fc1c37a.png)
 
 
 ### TIMING DIGRAMS  
+![TD](https://user-images.githubusercontent.com/94154941/171226452-61cf7c4c-4391-4cd2-9554-ca44d8ec66b0.png)
 
-
-
+### PROGRAM
+\*module dm(s1,s2,i1,i2,i3,i4,y);
+input s1,s2,i1,i2,i3,i4;
+output y;
+wire a,b,c,d,e,f;
+assign e=~s1;
+assign f=~s2;
+assign a=i1&e&f;
+assign b=i2&e&s2;
+assign c=i3&s1&f;
+assign d=i4&s1&s2;
+assign y=a|b|c|d;
+endmodule*\
 
 
 ### TRUTH TABLE 
 
+![TT](https://user-images.githubusercontent.com/94154941/171226427-a588a5d3-fa9e-4361-a96f-440c6dbe888c.png)
 
 
 
