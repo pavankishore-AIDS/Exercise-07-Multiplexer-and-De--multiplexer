@@ -128,3 +128,4 @@ endmodule*\
 
 
 ### RESULTS 
+Thus the program to design a 4x1 multiplexer and 1x4 demultiplexer is done successful.
